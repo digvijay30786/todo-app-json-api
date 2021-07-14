@@ -1,24 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import Updateclock from "./components/liveClock";
-
+import Timer from "./components/timer";
 
 function App() {
-  const [show, setShow] = useState(true);
-  return show ? (
-      <div className="App">
-      <Updateclock />
-      <button onClick={() => {
-        setShow(!show);
-      }}>Hide Time</button>
-      </div>
-  ) : (
+  return (
     <div className="App">
-      <button onClick={() => {
-        setShow(true);
-        }}>Show Time</button>
-        </div>
-  )
+      <Timer starSecond={Math.floor(Math.random() * 100) + 40} endSecond={Math.floor(Math.random() * 100) + 100}/>
+    </div>
+  );
 }
 
 export default App;
